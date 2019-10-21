@@ -1,0 +1,15 @@
+{
+  "mqtt": {
+    "url": "mqtt://user:pass@foobar.example"
+  },
+  "dongles": [
+    {
+      "hciDevice": "hci0",
+      "mode": "le",
+      "services": [],
+      "devices": [
+
+      ]
+    }
+  ]
+}
