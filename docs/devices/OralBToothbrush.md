@@ -1,5 +1,6 @@
 # Oral-B Smart Toothbrush
 ![The Device](https://i.imgur.com/fUGMaZZ.png)
+
 Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices mac.
 
 ## Device Config Entry

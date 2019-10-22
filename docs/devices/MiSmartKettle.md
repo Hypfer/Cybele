@@ -1,5 +1,6 @@
 # Xiaomi Mi Mija Smart Kettle
 ![The Device](https://i.imgur.com/UA3eGDP.png)
+
 Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices mac.
 
 Protocol documentation can be found here: [https://github.com/aprosvetova/xiaomi-kettle](https://github.com/aprosvetova/xiaomi-kettle)

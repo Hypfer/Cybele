@@ -1,5 +1,6 @@
 # Xiaomi Mi Body Composition Scale
 ![The Device](https://i.imgur.com/nPJJsGI.png)
+
 Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices mac.
 
 ## Device Config Entry
