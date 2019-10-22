@@ -36,7 +36,7 @@ Deployment is simple:
 3. Copy `config.default.json` to `config.json` and edit according to your needs. Documentation on possible devices can be found [here.](docs/devices)
 4. Run `app.js`. Either manually using `node app.js` or by using the provided systemd unit file.
 
-A sample systemd unit file is included [here.](deployment/systemd/cybele.conf)
+A sample systemd unit file is included [here.](deployment/systemd/cybele.service)
 
 Place it in `/etc/systemd/system/` and don't forget to change the paths in it if required.
 
