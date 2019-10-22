@@ -15,10 +15,10 @@ Currently, the following devices/device types are supported:
 
 * GlanceClock Smart Wall Clock
 * [Xiaomi Mi Mija Smart Kettle](docs/devices/MiSmartKettle.md)
-* Xiaomi Mi Body Composition Scale
-* Oral-B Smart Toothbrushes
-* Generic BLE Beacons for presence tracking
-* Generic BLE Devices which provide battery information
+* [Xiaomi Mi Body Composition Scale](docs/devices/MiBodyCompositionScale.md)
+* [Oral-B Smart Toothbrushes](docs/devices/OralBToothbrush.md)
+* [Room Presence tracking using generic BLE Beacons](docs/devices/RoomPresenceBeacon.md)
+* [Generic BLE Devices which provide battery information](docs/devices/BatteryPoweredDevice.md)
 
 _You can click on the device to jump to its documentation._
 

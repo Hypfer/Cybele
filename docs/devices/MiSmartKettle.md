@@ -1,4 +1,5 @@
 # Xiaomi Mi Mija Smart Kettle
+![The Device](https://i.imgur.com/UA3eGDP.png)
 Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices mac.
 
 Protocol documentation can be found here: [https://github.com/aprosvetova/xiaomi-kettle](https://github.com/aprosvetova/xiaomi-kettle)
@@ -23,6 +24,11 @@ Known values are:
 #### Autoconfig
 The device will attempt to autoconfigure Home Assistant for temperature information + attributes on 
 `homeassistant/sensor/kettle_ffffffffffff/config`.
+
+#### Presence
+`kettle/ffffffffffff/presence` will either be `online` or `offline`
+
+You can only send commands when this is `online`
 
 #### State
 `kettle/ffffffffffff/state` provides the current temperature
