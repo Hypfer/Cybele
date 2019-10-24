@@ -5,6 +5,7 @@ After=network.target
 
 [Service]
 Type=simple
+User=pi
 ExecStart=/usr/local/bin/node /home/pi/Cybele/app.js
 WorkingDirectory=/home/pi/Cybele/
 RestartSec=2

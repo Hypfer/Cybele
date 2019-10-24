@@ -24,6 +24,11 @@ mqttClient.on("connect", () => {
         dongleFactory.manufacture(dongleConfig, (err, dongle) => {
             if(!err) {
                 dongles.push(dongle);
+            } else {
+                err = {
+                    dongleConfig: dongleConfig,
+                    error: err
+                }
             }
 
             done(err);
