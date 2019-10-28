@@ -1,51 +1,37 @@
-const dbus = require('dbus-native');
-const async = require("async");
 const mqtt = require("mqtt");
 
-const DongleFactory = require("./lib/DongleFactory");
+const Cybele = require("./lib/Cybele");
 
 const config = require("./config.json");
-const bus = dbus.systemBus();
 
 const mqttClient = mqtt.connect(config.mqtt.url, {});
 
 //TODO: validate config file
 
 mqttClient.on("connect", () => {
-    const dongles = [];
+    let cybele;
     console.info("Connected to MQTT Broker");
 
-    const dongleFactory = new DongleFactory({
-        bus: bus,
-        mqttClient: mqttClient
+    cybele = new Cybele({
+        mqttClient: mqttClient,
+        config: config
     });
 
-    async.each(config.dongles, (dongleConfig, done) => {
-        dongleFactory.manufacture(dongleConfig, (err, dongle) => {
-            if(!err) {
-                dongles.push(dongle);
-            } else {
-                err = {
-                    dongleConfig: dongleConfig,
-                    error: err
-                }
-            }
-
-            done(err);
-        })
-    }, err => {
+    cybele.initialize(err => {
         if(!err) {
             console.log("Startup complete");
 
-           mqttClient.on("message", (topic, message) => {
-               message = message.toString();
+            mqttClient.on("message", (topic, message) => {
+                message = message.toString();
 
-               dongles.forEach(dongle => {
-                   dongle.devices.forEach(device => {
-                       device.handleMqttMessage(topic, message);
-                   })
-               })
-           });
+                Object.keys(cybele.dongles).forEach(dongleKey => {
+                    const dongle = cybele.dongles[dongleKey];
+
+                    dongle.devices.forEach(device => {
+                        device.handleMqttMessage(topic, message);
+                    })
+                })
+            });
         } else {
             console.error(err);
             process.exit(0);
