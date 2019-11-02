@@ -12,7 +12,7 @@ Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices m
   "mac": "FF:FF:FF:FF:FF:FF",
   "pollingInterval": 300000,
   "disconnectAfterFetch": true,
-  "delayAfterConnect": 800
+  "maxDelayAfterConnect": 8000
 }
 ```
 
@@ -21,7 +21,7 @@ Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices m
 `disconnectAfterFetch` determine if this module should disconnect after fetching battery information
 Beacons will usually stop advertising while being connected so not disconnecting might break things
 
-`delayAfterConnect` time to wait for the battery interface to become available before reading in milliseconds
+`maxDelayAfterConnect` maximum time to wait for the battery interface to become available in milliseconds
 
 
 ## MQTT
