@@ -19,6 +19,7 @@ Currently, the following devices/device types are supported:
 * [Oral-B Smart Toothbrushes](docs/devices/OralBToothbrush.md)
 * [Room Presence tracking using generic BLE Beacons](docs/devices/RoomPresenceBeacon.md)
 * [Generic BLE Devices which provide battery information](docs/devices/BatteryPoweredDevice.md)
+* [Xiaomi Mi Flora Plant Sensors](docs/devices/MiFlora.md)
 
 _You can click on the device to jump to its documentation._
 

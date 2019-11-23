@@ -1,5 +1,5 @@
 # Xiaomi Mi Mija Smart Kettle
-![The Device](https://i.imgur.com/UA3eGDP.png)
+![The Device](https://user-images.githubusercontent.com/974410/69484465-c20d6480-0e33-11ea-8232-95adef786c8b.png)
 
 Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices mac.
 
@@ -27,15 +27,15 @@ The device will attempt to autoconfigure Home Assistant for temperature informat
 `homeassistant/sensor/kettle_ffffffffffff/config`.
 
 #### Presence
-`kettle/ffffffffffff/presence` will either be `online` or `offline`
+`cybele/kettle/ffffffffffff/presence` will either be `online` or `offline`
 
 You can only send commands when this is `online`
 
 #### State
-`kettle/ffffffffffff/state` provides the current temperature
+`cybele/kettle/ffffffffffff/state` provides the current temperature
 
 #### Attributes
-`kettle/ffffffffffff/attributes` provides the current attributes.
+`cybele/kettle/ffffffffffff/attributes` provides the current attributes.
 
 ```
 {
@@ -78,7 +78,7 @@ Half hours are also possible: 7h30m = 7.5
 #### Commands
 
 ##### Set Keep Warm Parameters
-**Topic:** `kettle/ffffffffffff/set_keep_warm_parameters`
+**Topic:** `cybele/kettle/ffffffffffff/set_keep_warm_parameters`
 
 **Payload:**
 ```
@@ -92,7 +92,7 @@ Half hours are also possible: 7h30m = 7.5
 `temperature` is the keep warm temperature in °C (40-95)
 
 ##### Set Keep Warm Time Limit
-**Topic:** `kettle/ffffffffffff/set_keep_warm_time_limit`
+**Topic:** `cybele/kettle/ffffffffffff/set_keep_warm_time_limit`
 
 **Payload:**
 ```
@@ -104,7 +104,7 @@ Half hours are also possible: 7h30m = 7.5
 Half hours are also possible: 7h30m = 7.5
 
 ##### Set Boil Mode
-**Topic:** `kettle/ffffffffffff/set_boil_mode`
+**Topic:** `cybele/kettle/ffffffffffff/set_boil_mode`
 
 **Payload:**
 ```

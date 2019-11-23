@@ -31,4 +31,4 @@ The device will attempt to autoconfigure Home Assistant for state information on
 `homeassistant/sensor/bat_ffffffffffff/config`
 
 #### State
-`battery_powered_ble_device/ffffffffffff/state` provides the current battery percentage
+`cybele/battery_powered_ble_device/ffffffffffff/state` provides the current battery percentage

@@ -1,5 +1,5 @@
 # Oral-B Smart Toothbrush
-![The Device](https://i.imgur.com/fUGMaZZ.png)
+![The Device](https://user-images.githubusercontent.com/974410/69484450-ba4dc000-0e33-11ea-8282-47e7f6a5a99e.png)
 
 Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices mac.
 
@@ -19,10 +19,10 @@ The device will attempt to autoconfigure Home Assistant for state information + 
 `homeassistant/sensor/toothbrush_ffffffffffff/config`.
 
 #### Presence
-`toothbrush/ffffffffffff/presence` will either be `online` or `offline`
+`cybele/toothbrush/ffffffffffff/presence` will either be `online` or `offline`
 
 #### State
-`toothbrush/ffffffffffff/state` provides the current temperature
+`cybele/toothbrush/ffffffffffff/state` provides the current temperature
 
 may be one of the following:
 * `unknown`
@@ -38,7 +38,7 @@ may be one of the following:
 * `transport`
 
 #### Attributes
-`toothbrush/ffffffffffff/attributes` provides the current attributes.
+`cybele/toothbrush/ffffffffffff/attributes` provides the current attributes.
 
 ```
 {

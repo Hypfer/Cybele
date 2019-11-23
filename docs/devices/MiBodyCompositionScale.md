@@ -1,5 +1,5 @@
 # Xiaomi Mi Body Composition Scale
-![The Device](https://i.imgur.com/nPJJsGI.png)
+![The Device](https://user-images.githubusercontent.com/974410/69484453-bd48b080-0e33-11ea-9360-bc1cca53eca7.png)
 
 Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices mac.
 
@@ -27,10 +27,10 @@ The device will attempt to autoconfigure Home Assistant for state information + 
 `homeassistant/sensor/body_scale_ffffffffffff/config`.
 
 #### State
-`body_scale/ffffffffffff/state` provides the weight
+`cybele/body_scale/ffffffffffff/state` provides the weight
 
 #### Attributes
-`body_scale/ffffffffffff/attributes` provides the current attributes.
+`cybele/body_scale/ffffffffffff/attributes` provides the current attributes.
 
 ```
 {
