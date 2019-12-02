@@ -13,6 +13,7 @@
     "dbus-native": "https://github.com/sidorares/dbus-native/",
     "mqtt": "^3.0.0",
     "protobufjs": "^6.8.8",
-    "semaphore": "^1.1.0"
+    "semaphore": "^1.1.0",
+    "xml2js": "^0.4.22"
   }
 }
