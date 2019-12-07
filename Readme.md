@@ -35,7 +35,7 @@ The BlueZ Version needs to be rather new as well. Debian Busters BlueZ 5.50 is s
 Deployment is simple:
 1. Clone this repo
 2. Navigate into the cloned repo and run `npm install`
-3. Copy `config.default.json` to `config.json` and edit according to your needs. Documentation on possible devices can be found [here.](docs/devices)
+3. Copy `config.default.json` to `config.json` and edit according to your needs. Documentation can be found [here.](docs/index.md)
 4. Run `app.js`. Either manually using `node app.js` or by using the provided systemd unit file.
 
 A sample systemd unit file is included [here.](deployment/systemd/cybele.service)
