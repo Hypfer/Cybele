@@ -20,6 +20,7 @@ Currently, the following devices/device types are supported:
 * [Room Presence tracking using generic BLE Beacons](docs/devices/RoomPresenceBeacon.md)
 * [Generic BLE Devices which provide battery information](docs/devices/BatteryPoweredDevice.md)
 * [Xiaomi Mi Flora Plant Sensors](docs/devices/MiFlora.md)
+* [eQ-3 Eqiva BLUETOOTH® Radiator Thermostats](docs/devices/EqivaThermostat.md)
 
 _You can click on the device to jump to its documentation._
 
