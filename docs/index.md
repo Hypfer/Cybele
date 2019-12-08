@@ -10,7 +10,31 @@ This enables Cybele to power-cycle a misbehaving adapter and _hopefully_ get eve
 A Raspberry Pi 3B+ for example comes with two uhubctl-supported USB Ports (next to the ethernet jack).
 Just don't forget to disable on-board bluetooth.
 
-### Configuring Cybele
+## General considerations
+BLE can and will spam quite a lot:
+```
+[18893.140515] Bluetooth: hci1: advertising data len corrected
+[18893.140534] Bluetooth: hci0: advertising data len corrected
+[18894.144542] Bluetooth: hci0: advertising data len corrected
+[18894.146531] Bluetooth: hci1: advertising data len corrected
+[18895.149522] Bluetooth: hci1: advertising data len corrected
+[18895.149562] Bluetooth: hci0: advertising data len corrected
+[18896.161532] Bluetooth: hci0: advertising data len corrected
+```
+
+While there is no way to suppress these messages from the kernel message buffer, you can at least filter them
+from your syslog, which is highly recommended on devices where there is not much storage and the storage available is flash.
+
+
+If you're using rsyslogd, create a file named `/etc/rsyslog.d/01-blocklist.conf` with the 
+following contents and reload/restart the service:
+```
+:msg,contains,"advertising data len corrected" stop
+:msg,contains,"bt_err_ratelimited:" stop
+```
+
+
+## Configuring Cybele
 
 A basic configuration file looks like this
 ```

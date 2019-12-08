@@ -11,12 +11,15 @@ Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices m
   "friendlyName": "Keychain Beacon",
   "mac": "FF:FF:FF:FF:FF:FF",
   "pollingInterval": 300000,
+  "pollOnStartup": false,
   "disconnectAfterFetch": true,
   "maxDelayAfterConnect": 8000
 }
 ```
 
 `pollingInterval` the interval this module will use to fetch battery information in milliseconds
+
+If `pollOnStartup` is set to true, the first polling will happen 1s after startup.
 
 `disconnectAfterFetch` determine if this module should disconnect after fetching battery information
 Beacons will usually stop advertising while being connected so not disconnecting might break things

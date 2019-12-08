@@ -12,9 +12,14 @@ Protocol documentation can be found here: [https://github.com/vrachieru/xiaomi-f
   "type": "MiFloraDevice",
   "friendlyName": "MiFlora Strawberries",
   "pollingInterval": 600000,
+  "pollOnStartup": false,
   "mac": "FF:FF:FF:FF:FF:FF"
 }
 ```
+
+`pollingInterval` the interval this module will use to fetch battery information in milliseconds
+
+If `pollOnStartup` is set to true, the first polling will happen 1s after startup.
 
 ## MQTT
 
