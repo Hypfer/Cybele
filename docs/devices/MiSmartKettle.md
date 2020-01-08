@@ -1,9 +1,25 @@
-# Xiaomi Mi Mija Smart Kettle
-![The Device](https://user-images.githubusercontent.com/974410/69484465-c20d6480-0e33-11ea-8232-95adef786c8b.png)
+# Xiaomi / Viomi Mi Mija Smart Kettle
+![The Device](https://user-images.githubusercontent.com/974410/72007682-7d5a5300-3252-11ea-97a8-74e4c109d231.png)
 
 Please replace `FF:FF:FF:FF:FF:FF` as well as `ffffffffffff` with your devices mac.
 
 Protocol documentation can be found here: [https://github.com/aprosvetova/xiaomi-kettle](https://github.com/aprosvetova/xiaomi-kettle)
+
+## Device revisions
+There are quite a few revisions of this device
+
+| Name            | Model               | Product ID | Manufacturer Comment            | Notes                             |
+|-----------------|---------------------|------------|---------------------------------|-----------------------------------|
+| yunmi.kettle.v1 |                     | 131        | Mainland and Hong Kong versions | May have been available in russia |
+| yunmi.kettle.v2 | YM-K1501            | 275        | International version           | White, No Display, No Presets(?)  |
+| yunmi.kettle.v3 |                     |            | Taiwan version                  |                                   |
+| yunmi.kettle.v5 |                     |            | Korean version                  |                                   |
+| yunmi.kettle.v6 |                     |            |                                 |                                   |
+| yunmi.kettle.v7 | V-SK152A / V-SK152B | 1116       | International version           | Black and White, Display, Presets |
+
+The handle feels a lot more sturdy on the v2 compared to the v7. v7 also seems to have noticeably worse signal strength.
+
+If you don't need the display, you might be better off with an older revision.
 
 ## Device Config Entry
 ```
@@ -14,11 +30,7 @@ Protocol documentation can be found here: [https://github.com/aprosvetova/xiaomi
   "productId": 275
 }
 ```
-The correct productId is required for this to work. Yours might be different.
-
-Known values are: 
-* 131
-* 275
+The correct productId is required for this to work. Check the table above.
 
 ## MQTT
 
@@ -41,7 +53,7 @@ You can only send commands when this is `online`
 {
     "action": "idle",
     "mode": "none",
-    "boil_mode": "turn_off",
+    "keep_warm_refill_mode": "turn_off",
     "keep_warm_temperature": 65,
     "keep_warm_type": "heat_to_temperature",
     "keep_warm_time": 0,
@@ -59,12 +71,19 @@ You can only send commands when this is `online`
 * `boil`
 * `keep_warm`
 
-`boil_mode` describes what happens after the boiling process is completed.
+`keep_warm_refill_mode` is called `Extended warm up` in the official app.
+
+This defines what happens when the kettle is currently in `keep_warm` mode and gets taken off the dock and put back on again.
+If this is set to `keep_warm` >= 45°C and the water temperature hasn't changed by more than 3°C, 
+the kettle will return to keeping the water at the set temperature without reboiling it.
+
+If the difference is more than 3°C or this is set to `turn_off` the kettle will just stay off.
+
 It may be one of the following:
 * `turn_off`
 * `keep_warm`
 
-`keep_warm_temperature` is the keep warm temperature in °C (40-95)
+`keep_warm_temperature` is the keep warm temperature in °C (40-90)
 
 `keep_warm_type` may be one of the following:
 * `boil_and_cool_down`
@@ -103,8 +122,8 @@ Half hours are also possible: 7h30m = 7.5
 `time` is the time in hours keep warm will stay on before turning itself off automatically. 0-12.
 Half hours are also possible: 7h30m = 7.5
 
-##### Set Boil Mode
-**Topic:** `cybele/kettle/ffffffffffff/set_boil_mode`
+##### Set Keep Warm Refill Mode
+**Topic:** `cybele/kettle/ffffffffffff/set_keep_warm_refill_mode`
 
 **Payload:**
 ```
