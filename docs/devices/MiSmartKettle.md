@@ -32,6 +32,12 @@ If you don't need the display, you might be better off with an older revision.
 ```
 The correct productId is required for this to work. Check the table above.
 
+Optionally, you can keep using the MiHome app by adding the token extracted from the App to this config entry like this:
+
+```
+  "token" : [255,255,255,255,255,255,255,255,255,255,255,255]
+```
+
 ## MQTT
 
 #### Autoconfig

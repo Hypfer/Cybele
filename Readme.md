@@ -14,7 +14,7 @@ Cybele can..
 Currently, the following devices/device types are supported:
 
 * GlanceClock Smart Wall Clock
-* [Xiaomi Mi Mija Smart Kettle](docs/devices/MiSmartKettle.md)
+* [Xiaomi / Viomi Mi Mija Smart Kettle](docs/devices/MiSmartKettle.md)
 * [Xiaomi Mi Body Composition Scale](docs/devices/MiBodyCompositionScale.md)
 * [Oral-B Smart Toothbrushes](docs/devices/OralBToothbrush.md)
 * [Room Presence tracking using generic BLE Beacons](docs/devices/RoomPresenceBeacon.md)
