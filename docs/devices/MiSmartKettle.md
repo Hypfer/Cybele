@@ -114,7 +114,7 @@ Half hours are also possible: 7h30m = 7.5
 ```
 `mode` can either be `boil` or `heat`
 
-`temperature` is the keep warm temperature in °C (40-95)
+`temperature` is the keep warm temperature in °C (40-90)
 
 ##### Set Keep Warm Time Limit
 **Topic:** `cybele/kettle/ffffffffffff/set_keep_warm_time_limit`
