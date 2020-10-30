@@ -42,6 +42,41 @@ A sample systemd unit file is included [here.](deployment/systemd/cybele.service
 
 Place it in `/etc/systemd/system/` and don't forget to change the paths in it if required.
 
+## Known Issues
+As of now (2020-10-30), there's a bug in bluetoothd which causes it to constantly write all state changes of everything all the time to disk.
+This has caused the death of multiple brave 16GB micro sd cards which couldn't handle 50+TBW :(
+
+As a mitigation, I'm currently using a ramdisk for the bluetooth state directory:
+
+Add this to your `/etc/fstab`:
+
+```
+tmpfs           /tmp/bluetoothstate        tmpfs   nodev,nosuid,size=60M 0 0
+```
+
+Create a symlink `ln -s /tmp/bluetoothstate /var/lib/bluetooth`
+
+And use this systemd service `/etc/systemd/system/bluetoothramdisk.service`:
+
+```
+[Unit]
+RequiredBy=bluetooth.service
+PartOf=bluetooth.service
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/bin/rsync -ar /opt/bluetooth_backup/ /tmp/bluetoothstate/
+ExecStop=/usr/bin/rsync -ar /tmp/bluetoothstate/ /opt/bluetooth_backup/
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
+
+You may need to create /opt/bluetooth_backup beforehand and initially seed it with your current data.
+
+
 ## Misc
 Please note that Cybele is currently in its early stages.
 There is still a lot to do regarding both error handling as well as code-cleanup.
