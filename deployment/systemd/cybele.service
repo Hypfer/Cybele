@@ -1,7 +1,7 @@
 [Unit]
 Description=cybele
-Requires=network.target
-After=network.target
+Requires=bluetooth.service
+PartOf=bluetooth.service
 
 [Service]
 Type=simple
