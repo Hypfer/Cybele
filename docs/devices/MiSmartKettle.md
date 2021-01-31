@@ -12,7 +12,7 @@ There are quite a few revisions of this device
 |-----------------|---------------------|------------|---------------------------------|-----------------------------------|
 | yunmi.kettle.v1 |                     | 131        | Mainland and Hong Kong versions | May have been available in russia |
 | yunmi.kettle.v2 | YM-K1501            | 275        | International version           | White, No Display, No Presets(?)  |
-| yunmi.kettle.v3 |                     |            | Taiwan version                  |                                   |
+| yunmi.kettle.v3 |                     | 395        | Taiwan version                  |                                   |
 | yunmi.kettle.v5 |                     |            | Korean version                  |                                   |
 | yunmi.kettle.v6 |                     |            |                                 |                                   |
 | yunmi.kettle.v7 | V-SK152A / V-SK152B | 1116       | International version           | Black and White, Display, Presets |
