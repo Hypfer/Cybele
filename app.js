@@ -17,25 +17,23 @@ mqttClient.on("connect", () => {
         config: config
     });
 
-    cybele.initialize(err => {
-        if(!err) {
-            console.log("Startup complete");
+    cybele.initialize().then(() => {
+        console.log("Startup complete");
 
-            mqttClient.on("message", (topic, message) => {
-                message = message.toString();
+        mqttClient.on("message", (topic, message) => {
+            message = message.toString();
 
-                Object.keys(cybele.dongles).forEach(dongleKey => {
-                    const dongle = cybele.dongles[dongleKey];
+            Object.keys(cybele.dongles).forEach(dongleKey => {
+                const dongle = cybele.dongles[dongleKey];
 
-                    dongle.devices.forEach(device => {
-                        device.handleMqttMessage(topic, message);
-                    })
-                })
+                dongle.devices.forEach(device => {
+                    device.handleMqttMessage(topic, message);
+                });
             });
-        } else {
-            console.error(err);
-            process.exit(0);
-        }
+        });
+    }).catch(err => {
+        console.error(err);
+        process.exit(0);
     });
 });
 
@@ -44,5 +42,5 @@ mqttClient.on("connect", () => {
     mqttClient.on(event, (e) => {
         console.error(e);
         process.exit(0);
-    })
+    });
 });
